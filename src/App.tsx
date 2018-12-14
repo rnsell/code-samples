@@ -1,17 +1,20 @@
 import React, { Component } from "react";
-import { HomePage } from "./pages";
-import "./App.css";
-// import { Route } from "react-router";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HomePage, GradingStudentPage } from "./pages";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Router>
+      <Router>
+        <Switch>
+          <Route
+            path="/grading-students"
+            exact
+            component={GradingStudentPage}
+          />
           <Route path="/" component={HomePage} />
-        </Router>
-      </div>
+        </Switch>
+      </Router>
     );
   }
 }
